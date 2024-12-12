@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		52340E482D0AF579009B134B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 52340E462D0AF571009B134B /* README.md */; };
+		52340E4B2D0AF59B009B134B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 52340E492D0AF596009B134B /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		52340E302D0AF556009B134B /* Template-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Template-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52340E462D0AF571009B134B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		52340E492D0AF596009B134B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +41,8 @@
 			children = (
 				52340E322D0AF556009B134B /* Template-iOS */,
 				52340E312D0AF556009B134B /* Products */,
+				52340E462D0AF571009B134B /* README.md */,
+				52340E492D0AF596009B134B /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +118,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52340E4B2D0AF59B009B134B /* .gitignore in Resources */,
+				52340E482D0AF579009B134B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
