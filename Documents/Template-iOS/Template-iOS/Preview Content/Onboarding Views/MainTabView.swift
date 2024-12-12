@@ -23,7 +23,35 @@ struct MainTabView: View {
                 UITabBar.appearance().scrollEdgeAppearance = appearance
             }
         }
-    
+    var body: some View {
+            TabView {
+                // Placeholder for BirthdayListView
+                Text("Birthday List View Placeholder")
+                    .tabItem {
+                        Label("Birthdays", systemImage: "gift")
+                    }
+                
+                // Placeholder for AnniversaryListView
+                Text("Anniversary List View Placeholder")
+                    .tabItem {
+                        Label("Anniversaries", systemImage: "heart")
+                    }
+                
+                // Placeholder for HolidayListView
+                Text("Holiday List View Placeholder")
+                    .tabItem {
+                        Label("Holidays", systemImage: "calendar")
+                    }
+
+                // Placeholder for ProfileView
+                Text("Profile View Placeholder")
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+                    }
+            }
+        }
+    }
+    /*
     var body: some View {
         TabView {
             BirthdayListView()
@@ -48,6 +76,7 @@ struct MainTabView: View {
         }
     }
 }
+     */
 
 
 struct MainTabView_Previews: PreviewProvider {

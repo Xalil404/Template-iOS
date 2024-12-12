@@ -18,7 +18,7 @@ import SwiftUI
 
 // Backend URL for google auth
 struct API {
-    static let backendURL = "https://crud-backend-for-react-841cbc3a6949.herokuapp.com/api/auth/google/mobile/"
+    static let backendURL = "https://backend-django-9c363a145383.herokuapp.com/api/auth/google/mobile/"
 }
 
 
@@ -49,7 +49,7 @@ struct LoginView: View {
             .padding(.horizontal)
             
             // Main Image
-            Image("loginImage")
+            Image("one")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 300, height: 300)
@@ -230,7 +230,7 @@ struct LoginView: View {
         loginError = nil
         
         let credentials = ["email": email, "password": password]
-        let loginUrl = "https://crud-backend-for-react-841cbc3a6949.herokuapp.com/auth/login/"
+        let loginUrl = "https://backend-django-9c363a145383.herokuapp.com/auth/login/"
         
         guard let url = URL(string: loginUrl) else { return }
         
@@ -445,7 +445,7 @@ struct LoginView: View {
 
     // Function to send Apple Sign-In data to backend
     func sendAppleDataToBackend(appleData: [String: Any], completion: @escaping (Result<String, Error>) -> Void) {
-        guard let url = URL(string: "https://crud-backend-for-react-841cbc3a6949.herokuapp.com/api/auth/apple/mobile/") else {
+        guard let url = URL(string: "https://backend-django-9c363a145383.herokuapp.com/api/auth/apple/mobile/") else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }

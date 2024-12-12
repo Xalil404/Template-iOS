@@ -54,7 +54,7 @@ struct SignUpView: View {
                 .padding(.horizontal)
                 
                 // Main Image
-                Image("signupImage")
+                Image("one")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
@@ -193,7 +193,7 @@ struct SignUpView: View {
         }
         
         // Prepare the request
-        guard let url = URL(string: "https://crud-backend-for-react-841cbc3a6949.herokuapp.com/auth/registration/") else {
+        guard let url = URL(string: "https://backend-django-9c363a145383.herokuapp.com/auth/registration/") else {
             alertItem = SignUpError(message: "Invalid URL.")
             print("Invalid URL.")
             return
@@ -639,7 +639,7 @@ struct SignUpView: View {
 
     // Function to send Apple Sign-In data to backend
     func sendAppleDataToBackend(appleData: [String: Any], completion: @escaping (Result<String, Error>) -> Void) {
-        guard let url = URL(string: "https://crud-backend-for-react-841cbc3a6949.herokuapp.com/api/auth/apple/mobile/") else {  // Updated for sign-up
+        guard let url = URL(string: "https://backend-django-9c363a145383.herokuapp.com/api/auth/apple/mobile/") else {  // Updated for sign-up
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
