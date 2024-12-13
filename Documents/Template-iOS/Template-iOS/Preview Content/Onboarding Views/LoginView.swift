@@ -5,13 +5,6 @@
 //  Created by TEST on 12.12.2024.
 //
 
-//
-//  LoginView.swift
-//  Dates
-//
-//  Created by TEST on 31.10.2024.
-//
-
 import AuthenticationServices
 import GoogleSignIn
 import SwiftUI
@@ -371,25 +364,6 @@ struct LoginView: View {
             }
         }.resume()
     }
-    
-    /*
-     // Function to login with Apple without a backend
-     func handleAppleSignIn(authorization: ASAuthorization) {
-     if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-     // Extract user data
-     let userID = appleIDCredential.user
-     let fullName = appleIDCredential.fullName
-     let email = appleIDCredential.email
-     
-     // Save user data in UserDefaults or send it to your backend
-     UserDefaults.standard.set(userID, forKey: "appleUserID")
-     UserDefaults.standard.set(email, forKey: "appleEmail")
-     
-     // Mark login as successful
-     self.isLoginSuccessful = true
-     }
-     }
-     */
     
     // Function to handle Apple sign-in with a backend
     func handleAppleSignIn(authorization: ASAuthorization) {
