@@ -25,6 +25,9 @@ struct LoginView: View {
     
     @State private var appleSignInError: String?
     
+    // Detect the current color scheme (light or dark)
+        @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack {
             // Custom Back Button
@@ -51,6 +54,7 @@ struct LoginView: View {
             Text("Login")
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .foregroundColor(colorScheme == .dark ? .black : .black) // Dynamic text color
             
             
             // Email Input Field
@@ -497,7 +501,16 @@ UIViewController {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        NavigationView { // Wrap the preview in a NavigationView for proper simulation
+            Group {
+                LoginView()
+                    .previewDisplayName("Light Mode")
+                    .environment(\.colorScheme, .light)
+                LoginView()
+                    .previewDisplayName("Dark Mode")
+                    .environment(\.colorScheme, .dark)
+            }
+        }
     }
 }
 

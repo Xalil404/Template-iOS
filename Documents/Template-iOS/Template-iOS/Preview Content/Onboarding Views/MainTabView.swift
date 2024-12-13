@@ -26,9 +26,9 @@ struct MainTabView: View {
     var body: some View {
             TabView {
                 // Placeholder for BirthdayListView
-                Text("Birthday List View Placeholder")
+                TicketListView()
                     .tabItem {
-                        Label("Birthdays", systemImage: "gift")
+                        Label("Tickets", systemImage: "gift")
                     }
                 
                 // Placeholder for AnniversaryListView
@@ -44,7 +44,7 @@ struct MainTabView: View {
                     }
 
                 // Placeholder for ProfileView
-                Text("Profile View Placeholder")
+                ProfileView()
                     .tabItem {
                         Label("Profile", systemImage: "person")
                     }

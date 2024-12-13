@@ -33,7 +33,8 @@ struct SignUpView: View {
     // Apple sign up
     @State private var appleSignUpError: String?
     
-
+    // Detect the current color scheme (light or dark)
+        @Environment(\.colorScheme) var colorScheme
 
     
     var body: some View {
@@ -63,6 +64,7 @@ struct SignUpView: View {
                 Text("Sign Up")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(colorScheme == .dark ? .black : .black) // Dynamic text color
                     
                 
                 // Email Input Field
@@ -509,7 +511,16 @@ UIViewController {
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        NavigationView { // Wrap the preview in a NavigationView for proper simulation
+            Group {
+                SignUpView()
+                    .previewDisplayName("Light Mode")
+                    .environment(\.colorScheme, .light)
+                SignUpView()
+                    .previewDisplayName("Dark Mode")
+                    .environment(\.colorScheme, .dark)
+            }
+        }
     }
 }
 

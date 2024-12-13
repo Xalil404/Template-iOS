@@ -4,12 +4,11 @@
 //
 //  Created by TEST on 12.12.2024.
 //
-
-
 import SwiftUI
 
-
 struct WelcomeView: View {
+    // Detect the current color scheme (light or dark)
+        @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         
@@ -23,6 +22,7 @@ struct WelcomeView: View {
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
+                    .foregroundColor(colorScheme == .dark ? .black : .black) // Dynamic text color
                 
                 Image("one")
                     .resizable()
@@ -72,7 +72,14 @@ struct WelcomeView: View {
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView { // Wrap the preview in a NavigationView for proper simulation
-            WelcomeView()
+            Group {
+                WelcomeView()
+                    .previewDisplayName("Light Mode")
+                    .environment(\.colorScheme, .light)
+                WelcomeView()
+                    .previewDisplayName("Dark Mode")
+                    .environment(\.colorScheme, .dark)
+            }
         }
     }
 }

@@ -4,11 +4,12 @@
 //
 //  Created by TEST on 12.12.2024.
 //
-
-
 import SwiftUI
 
 struct SplashScreen: View {
+    // Detect the current color scheme (light or dark)
+        @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack {
             Spacer()
@@ -29,6 +30,7 @@ struct SplashScreen: View {
                 Text("Welcome to Project")
                     .font(.title)
                     .fontWeight(.bold) // Optional styling
+                    .foregroundColor(colorScheme == .dark ? .black : .black) // Adjust text color
             }
             .padding(.top, 40) // Padding to adjust the position
 
@@ -48,6 +50,13 @@ struct SplashScreen: View {
 
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashScreen()
+        Group {
+            SplashScreen()
+                .previewDisplayName("Light Mode")
+                .environment(\.colorScheme, .light)
+            SplashScreen()
+                .previewDisplayName("Dark Mode")
+                .environment(\.colorScheme, .dark)
+        }
     }
 }

@@ -4,14 +4,15 @@
 //
 //  Created by TEST on 12.12.2024.
 //
-
-
 import SwiftUI
 
 struct OnboardingView: View {
     
     @State private var currentIndex = 0
     @State private var showWelcomeScreen = false // State variable for navigation
+    
+    // Detect the current color scheme (light or dark)
+        @Environment(\.colorScheme) var colorScheme
     
     private let onboardingData = [
         OnboardingData(imageName: "one", title: "All birthdays in one place", description: "Mark all of your important birthdays and never miss a reminder."),
@@ -64,6 +65,9 @@ struct OnboardingView: View {
 
 struct OnboardingPage: View {
     let data: OnboardingData
+    
+    // Detect the current color scheme (light or dark)
+        @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack(spacing: 20) {
@@ -75,10 +79,12 @@ struct OnboardingPage: View {
             Text(data.title)
                 .font(.title)
                 .fontWeight(.bold)
+                .foregroundColor(colorScheme == .dark ? .black : .black) // Dynamic text color
             
             Text(data.description)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
+                .foregroundColor(colorScheme == .dark ? .black : .black) // Dynamic text color
         }
     }
 }
@@ -91,6 +97,13 @@ struct OnboardingData {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        Group {
+            OnboardingView()
+                .previewDisplayName("Light Mode")
+                .environment(\.colorScheme, .light)
+            OnboardingView()
+                .previewDisplayName("Dark Mode")
+                .environment(\.colorScheme, .dark)
+        }
     }
 }
