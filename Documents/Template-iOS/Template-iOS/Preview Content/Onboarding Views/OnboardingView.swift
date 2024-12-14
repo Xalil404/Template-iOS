@@ -15,9 +15,9 @@ struct OnboardingView: View {
         @Environment(\.colorScheme) var colorScheme
     
     private let onboardingData = [
-        OnboardingData(imageName: "one", title: "All birthdays in one place", description: "Mark all of your important birthdays and never miss a reminder."),
-        OnboardingData(imageName: "two", title: "Never forget mother’s day", description: "Wish mum a happy birthday or mother’s day in time."),
-        OnboardingData(imageName: "three", title: "Holidays coming up?", description: "Plan for your favourite holidays in advance.")
+        OnboardingData(imageName: "one", title: "On boarding feature 1", description: "Sed accumsan sit amet magna fringilla accumsan. Sed accumsan sit amet magna fringilla accumsan."),
+        OnboardingData(imageName: "two", title: "On boarding feature 2", description: "Sed accumsan sit amet magna fringilla accumsan. Sed accumsan sit amet magna fringilla accumsan."),
+        OnboardingData(imageName: "three", title: "On boarding feature 3", description: "Sed accumsan sit amet magna fringilla accumsan. Sed accumsan sit amet magna fringilla accumsan.")
     ]
 
     var body: some View {

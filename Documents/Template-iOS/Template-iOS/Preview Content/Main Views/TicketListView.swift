@@ -21,7 +21,7 @@ struct TicketListView: View {
                 // Empty state UI
                 if tasks.isEmpty {
                     VStack {
-                        Image("emptyState")
+                        Image("one")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 300, height: 300)
