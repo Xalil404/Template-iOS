@@ -4,8 +4,6 @@
 //
 //  Created by TEST on 12.12.2024.
 //
-
-
 import SwiftUI
 
 struct MainTabView: View {
@@ -32,15 +30,15 @@ struct MainTabView: View {
                     }
                 
                 // Placeholder for AnniversaryListView
-                Text("Anniversary List View Placeholder")
+                Text("Feature Two View Placeholder")
                     .tabItem {
-                        Label("Anniversaries", systemImage: "heart")
+                        Label("Feature 2", systemImage: "heart")
                     }
                 
                 // Placeholder for HolidayListView
-                Text("Holiday List View Placeholder")
+                Text("Feature Three View Placeholder")
                     .tabItem {
-                        Label("Holidays", systemImage: "calendar")
+                        Label("Feature 3", systemImage: "calendar")
                     }
 
                 // Placeholder for ProfileView
@@ -77,7 +75,6 @@ struct MainTabView: View {
     }
 }
      */
-
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
