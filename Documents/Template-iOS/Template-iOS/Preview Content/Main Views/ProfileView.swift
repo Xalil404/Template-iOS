@@ -4,6 +4,7 @@
 //
 //  Created by TEST on 13.12.2024.
 //
+/* some profile features might not be fully complete like logout or delete profile */
 import SwiftUI
 
 struct ProfileView: View {
